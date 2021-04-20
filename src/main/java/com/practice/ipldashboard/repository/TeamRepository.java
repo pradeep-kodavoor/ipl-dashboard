@@ -1,6 +1,5 @@
 package com.practice.ipldashboard.repository;
 
-import com.practice.ipldashboard.model.Match;
 import com.practice.ipldashboard.model.Team;
 
 import org.springframework.data.repository.CrudRepository;
