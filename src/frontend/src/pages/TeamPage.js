@@ -17,7 +17,8 @@ export const TeamPage = () => {
         setTeam(data)
       };
       fetchMatches();
-    }, [] // Initial useEffect only when component loads
+    }, [teamName] // Initial useEffect only when component loads
+    // List of properties mentioned here are watched for page refresh
   );
   if(!team || !team.teamName) {
     return <h1>Team not found</h1>
@@ -25,8 +26,8 @@ export const TeamPage = () => {
   return (
     <div className="TeamPage">
       <h1>{team.teamName}</h1>
-      <MatchDetailCard match = {team.matches[0]}/>
-      {team.matches.slice(1).map(match => <MatchSmallCard match = {match}/>)}
+      <MatchDetailCard teamName = {team.teamName} match = {team.matches[0]}/>
+      {team.matches.slice(1).map(match => <MatchSmallCard teamName = {team.teamName} match = {match}/>)}
     </div>
   );
 }

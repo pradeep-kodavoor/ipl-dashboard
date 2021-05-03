@@ -8,8 +8,7 @@ function App() {
       <Router>
         <Route path="/teams/:teamName">
         <TeamPage/>
-        </Route>
-        
+        </Route>       
       </Router>
     </div>
   );
