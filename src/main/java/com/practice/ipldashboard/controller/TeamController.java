@@ -1,8 +1,5 @@
 package com.practice.ipldashboard.controller;
 
-import java.util.List;
-
-import com.practice.ipldashboard.model.Match;
 import com.practice.ipldashboard.model.Team;
 import com.practice.ipldashboard.repository.MatchRepository;
 import com.practice.ipldashboard.repository.TeamRepository;
