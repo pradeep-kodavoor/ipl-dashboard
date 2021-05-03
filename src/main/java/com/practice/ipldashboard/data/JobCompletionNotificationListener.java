@@ -1,7 +1,6 @@
 package com.practice.ipldashboard.data;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -64,7 +63,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 
       teamData.values().forEach(team -> em.persist(team));
 
-      teamData.values().forEach(team -> System.out.println(team));
+      // teamData.values().forEach(team -> System.out.println(team));
 
     }
   }

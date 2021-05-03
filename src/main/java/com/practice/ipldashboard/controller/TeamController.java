@@ -1,15 +1,20 @@
 package com.practice.ipldashboard.controller;
 
+import java.util.List;
+
+import com.practice.ipldashboard.model.Match;
 import com.practice.ipldashboard.model.Team;
 import com.practice.ipldashboard.repository.MatchRepository;
 import com.practice.ipldashboard.repository.TeamRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 public class TeamController {
 
     @Autowired
