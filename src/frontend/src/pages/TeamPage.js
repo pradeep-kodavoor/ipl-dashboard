@@ -5,6 +5,8 @@ import { MatchSmallCard } from '../components/MatchSmallCard';
 
 import { PieChart } from 'react-minimal-pie-chart';
 
+import { Link } from 'react-router-dom';
+
 import './TeamPage.scss';
 
 
@@ -37,8 +39,8 @@ export const TeamPage = () => {
         Win/Losses
         <PieChart
           data={[
-            { title: 'Wins', value: team.totalWins, color: '#004d00' },
-            { title: 'Losses', value: team.totalMatches-team.totalWins, color: '#800000' },
+            { title: 'Wins', value: team.totalWins, color: '#136207' },
+            { title: 'Losses', value: team.totalMatches-team.totalWins, color: '#9b1c31' },
           ]}
         />
       </div>
@@ -48,7 +50,7 @@ export const TeamPage = () => {
       </div>
       {team.matches.slice(1).map(match => <MatchSmallCard teamName = {team.teamName} match = {match}/>)}
       <div className='more-link'>
-        <a  href="#">More..</a>
+        <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}>More..</Link>
       </div>
     </div>
   );

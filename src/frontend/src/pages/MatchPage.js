@@ -2,6 +2,10 @@ import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { MatchDetailCard } from '../components/MatchDetailCard';
 
+import { YearSelector } from '../components/YearSelector';
+
+import './MatchPage.scss';
+
 export const MatchPage = () => {
 
   const [matches, setMatches] = useState([]);
@@ -15,16 +19,21 @@ export const MatchPage = () => {
         setMatches(data);
       };
       fetchMatches();
-    }, [] // Initial useEffect only when component loads
+    }, [teamName, year] // Initial useEffect only when component loads
     // List of properties mentioned here are watched for page refresh
   );
 
-  return (
+   return (
     <div className="MatchPage">
-      <h1>Match Page</h1>
+      <div className='YearSelector'>
+        <h3>Select Year</h3>
+        <YearSelector teamName = {teamName}/>
+      </div>
+      
+      <div>
+      <h1 className='page-heading'>{teamName} matches in {year}</h1>
       {matches.map(match => <MatchDetailCard teamName = {teamName} match = {match}/>)}
+      </div>
     </div>
   );
 }
-
-// http://localhost:8080/team/${teamName}/matches/2019
